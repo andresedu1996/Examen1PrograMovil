@@ -1,3 +1,5 @@
+import 'dart:io';
+
 // Función para verificar si un número es primo
 bool esPrimo(int n) {
   if (n <= 1) return false;
@@ -20,10 +22,18 @@ List<int> primosEnRango(int inicio, int fin) {
   return primos;
 }
 
-// Ejemplo de uso
-void main() {
-  int inicio = 10;
-  int fin = 50;
+// Solicitar los números al usuario y mostrar los primos en el rango
+void NumPrimoRango() {
+  stdout.write('Ingrese el número de inicio: ');
+  int? inicio = int.tryParse(stdin.readLineSync() ?? '');
+  stdout.write('Ingrese el número de fin: ');
+  int? fin = int.tryParse(stdin.readLineSync() ?? '');
+
+  if (inicio == null || fin == null) {
+    print('Entrada inválida.');
+    return;
+  }
+
   List<int> primos = primosEnRango(inicio, fin);
   print('Números primos entre $inicio y $fin: $primos');
 }
