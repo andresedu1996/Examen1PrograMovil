@@ -1,7 +1,9 @@
 import 'dart:io';
+import 'package:examen_1/numeros_primos.dart';
 import 'package:examen_1/operaciones_basicas.dart';
 import 'package:examen_1/fibonacci.dart';
 import 'package:examen_1/figuras_geo.dart';
+
 import 'pareseimpares.dart';
 
 void main(List<String> arguments) {
@@ -35,7 +37,7 @@ void main(List<String> arguments) {
         division();
         break;
       case 5:
-        print('Función pendiente: Números primos');
+        numPrimoRango();
         break;
       case 6:
         numerosPares();
